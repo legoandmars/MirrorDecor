@@ -19,8 +19,8 @@ namespace MirrorDecor
 
                 player.thisPlayerModel.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
                 //V1
-                //player.thisPlayerModel.gameObject.layer = 29;
-                //player.thisPlayerModelArms.gameObject.layer = 3;
+                player.thisPlayerModel.gameObject.layer = 29;
+                player.thisPlayerModelArms.gameObject.layer = 3;
 
                 //V2
                 //player.thisPlayerModel.gameObject.layer = 29;
@@ -28,9 +28,9 @@ namespace MirrorDecor
                 //player.gameplayCamera.cullingMask = 1094391807;
 
                 //V3
-                player.thisPlayerModel.gameObject.layer = 3;
-                player.thisPlayerModelArms.gameObject.layer = 29;
-                player.gameplayCamera.cullingMask = 557520887;
+                //player.thisPlayerModel.gameObject.layer = 3;
+                //player.thisPlayerModelArms.gameObject.layer = 29;
+                //player.gameplayCamera.cullingMask = 557520887;
             }
         }
     }

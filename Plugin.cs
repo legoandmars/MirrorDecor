@@ -25,7 +25,7 @@ namespace MirrorDecor
     {
         public const string ModGUID = "quackandcheese.mirrordecor";
         public const string ModName = "MirrorDecor";
-        public const string ModVersion = "1.1.0";
+        public const string ModVersion = "1.1.1";
 
         public static AssetBundle Bundle;
 

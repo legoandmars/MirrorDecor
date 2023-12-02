@@ -30,7 +30,7 @@ namespace MirrorDecor
                     foreach (CosmeticInstance instance in app.spawnedCosmetics)
                     {
                         instance.transform.localScale *= 0.38f;
-                        SetAllChildrenLayer(instance.transform, "Player");
+                        SetAllChildrenLayer(instance.transform, 29);
                     }
                 }
             }
@@ -43,6 +43,15 @@ namespace MirrorDecor
             foreach (Transform child in transform)
             {
                 SetAllChildrenLayer(child, layerName);
+            }
+        }
+
+        private static void SetAllChildrenLayer(Transform transform, int layer)
+        {
+            transform.gameObject.layer = layer;
+            foreach (Transform child in transform)
+            {
+                SetAllChildrenLayer(child, layer);
             }
         }
     }
