@@ -6,7 +6,6 @@ using HarmonyLib;
 using LethalLib.Extras;
 using LethalLib.Modules;
 using MonoMod.RuntimeDetour;
-using MoreCompany;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -25,7 +24,7 @@ namespace MirrorDecor
     {
         public const string ModGUID = "quackandcheese.mirrordecor";
         public const string ModName = "MirrorDecor";
-        public const string ModVersion = "1.1.1";
+        public const string ModVersion = "1.1.3";
 
         public static AssetBundle Bundle;
 
@@ -56,7 +55,7 @@ namespace MirrorDecor
             logger = Logger;
             config = Config;
 
-            Harmony harmony = new Harmony(PluginInformation.PLUGIN_GUID);
+            Harmony harmony = new Harmony(ModGUID);
             harmony.PatchAll();
 
             MirrorDecor.Config.Load();

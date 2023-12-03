@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MirrorDecor
 {
-    [HarmonyPatch(typeof(PlayerControllerB), nameof(PlayerControllerB.ConnectClientToPlayerObject))]
+    [HarmonyPatch(typeof(PlayerControllerB), nameof(PlayerControllerB.SpawnPlayerAnimation))]
     internal class PlayerPatch
     {
         static void Postfix(ref PlayerControllerB __instance)

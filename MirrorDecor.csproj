@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>MirrorDecor</AssemblyName>
-    <Description>My first plugin</Description>
+    <Description>A mod for Lethal Company that adds a working mirror decoration that you can buy for your ship!</Description>
     <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
