@@ -5,6 +5,7 @@ using MoreCompany.Cosmetics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -18,20 +19,27 @@ namespace MirrorDecor
         {
             if (Chainloader.PluginInfos.ContainsKey("me.swipez.melonloader.morecompany"))
             {
-                CosmeticApplication app = GameObject.FindObjectOfType<CosmeticApplication>();
+                MoreCompanyPatch();
+            }
+        }
 
-                if (CosmeticRegistry.locallySelectedCosmetics.Count > 0 && app.spawnedCosmetics.Count <= 0)
+        // seperate method without inlining to avoid throwing errors on chat message
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private static void MoreCompanyPatch()
+        {
+            CosmeticApplication app = GameObject.FindObjectOfType<CosmeticApplication>();
+
+            if (CosmeticRegistry.locallySelectedCosmetics.Count > 0 && app.spawnedCosmetics.Count <= 0)
+            {
+                foreach (string id in CosmeticRegistry.locallySelectedCosmetics)
                 {
-                    foreach (string id in CosmeticRegistry.locallySelectedCosmetics)
-                    {
-                        app.ApplyCosmetic(id, true);
-                    }
+                    app.ApplyCosmetic(id, true);
+                }
 
-                    foreach (CosmeticInstance instance in app.spawnedCosmetics)
-                    {
-                        instance.transform.localScale *= 0.38f;
-                        SetAllChildrenLayer(instance.transform, 29);
-                    }
+                foreach (CosmeticInstance instance in app.spawnedCosmetics)
+                {
+                    instance.transform.localScale *= 0.38f;
+                    SetAllChildrenLayer(instance.transform, 29);
                 }
             }
         }
